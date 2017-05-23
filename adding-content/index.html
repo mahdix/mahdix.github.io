@@ -7,7 +7,7 @@
 	<meta name="description" content="A documentation theme for Hugo.">
 	<meta name="generator" content="Hugo 0.21" />
 	
-	<title> Alabaster</title>
+	<title>Adding content &mdash; Alabaster</title>
 	
 	<link rel="stylesheet" href="https://example.org/css/alabaster.css" type="text/css" />
 	<link rel="stylesheet" href="https://example.org/css/highlight.css" type="text/css" />
@@ -28,25 +28,64 @@
 				<div class="bodywrapper">
 					<div class="body" role="main">
 						
+	<h1>Adding content</h1>
 	
-		<h1>Foreword</h1>
-		
-
-<h2 id="what-is-alabaster">What is Alabaster?</h2>
-
-<p><a href="https://github.com/bitprophet/alabaster">Alabaster</a> was originally a theme for the popular documentation tool <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a>. This theme port to Hugo theme is all about documentations. It should allow you to easily create a documentation for your projects.</p>
-
-<p><a href="http://www.fabfile.org/">Fabric</a> and <a href="http://www.pyinvoke.org/">Invoke</a> are two examples of the Alabaster theme in the wild.</p>
-
-<p>1The following pages will guide you through the setup, introduce you to the very basics of <a href="https://gohugo.io">Hugo</a> and show you the capabilities of this theme. Have a look at the <a href="/roadmap/">Roadmap</a> if you&rsquo;re curious about what comes next.</p>
-
-<h2 id="acknowledgements">Acknowledgements</h2>
-
-<p>1Last but not I want to give a big shout-out to <a href="https://github.com/bitprophet">Jeff Forcier</a>, <a href="https://github.com/kennethreitz">Kenneth Reitz</a> and <a href="https://github.com/mitsuhiko">Armin Ronacher</a>. Their work and modifications on the original codebase made this port possible.</p>
-
-<p>Furthermore, thanks to <a href="https://gihub.com/spf13">Steve Francia</a> for creating Hugo and the <a href="https://github.com/spf13/hugo/graphs/contributors">awesome community</a> around the project.</p>
-
 	
+
+<h2 id="hello-world">Hello world</h2>
+
+<p>Let&rsquo;s create our first content file for your documentation. Open a terminal and add the following command for each new file you want to add. Replace <code>&lt;section-name&gt;</code> with a general term that describes your document in detail.</p>
+
+<pre><code class="language-sh">hugo new &lt;section-name&gt;/filename.md
+</code></pre>
+
+<p>Visitors of your website will find the final document under <code>www.example.com/&lt;section-name&gt;/filename/</code>.</p>
+
+<p>Since it&rsquo;s possible to have multiple content files in the same section I recommend to create at least one <code>index.md</code> file per section. This ensures that users will find an index page under <code>www.example.com/&lt;section-name&gt;</code>.</p>
+
+<h2 id="homepage">Homepage</h2>
+
+<p>To add content to the homepage you need to add a small indicator to the frontmatter of the content file:</p>
+
+<pre><code class="language-toml">type: homepage
+</code></pre>
+
+<p>Otherwise the theme will not be able to find the corresponding content file.</p>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<p>You maybe noticed that the menu on the left contains a small table of contents of the current page. All <code>&lt;h2&gt;</code> tags (<code>## Headline</code> in Markdown) will be added automatically.</p>
+
+<h2 id="admonitions">Admonitions</h2>
+
+<p>Admonition is a handy feature that adds block-styled side content to your documentation, either notes or warnings. It can be enabled by using the corresponding <a href="http://gohugo.io/extras/shortcodes/">shortcodes</a> inside your content:</p>
+
+<pre><code class="language-md">{{&lt; admonition title=&quot;Note&quot; type=&quot;note&quot; &gt;}}
+Something good to know.
+{{&lt; /admonition &gt;}}
+</code></pre>
+
+<p>will be rendered as</p>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Lorem ipsum dolor.</p>
+</div>
+
+<p>The <code>type</code> parameter can optionally be used to either display a <code>note</code> or <code>warning</code>. The last type is the default one.</p>
+
+<pre><code class="language-md">{{&lt; admonition title=&quot;Caution&quot; &gt;}}
+Don't try this at home!
+{{&lt; /admonition &gt;}}
+</code></pre>
+
+<p>becomes</p>
+
+<div class="admonition ">
+<p class="first admonition-title">Caution</p>
+<p>Don&rsquo;t try this at home!</p>
+</div>
+
 
 
 						
@@ -101,7 +140,12 @@
 </ul>
 
 
-		
+		<h3>Related Topics</h3>
+<ul>
+  <li><a href="https://example.org/">Documentation overview</a><ul>
+  
+  
+</ul>
 
 	</div>
 </div>
